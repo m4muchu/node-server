@@ -13,7 +13,7 @@ hbs.registerHelper('getCurrentYear', () => {
     return new Date().getFullYear();
 });
 
-hbs.registerHelper('screamIt', (text) => {
+hbs.registerHelper('screamIt', (text) => {      // it is used to define a funtion and used in hbs
     return text.toUpperCase();
 });
 
@@ -44,6 +44,13 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about.hbs',{
         pageTitle: 'ABOUT THIS!'
+    });
+});
+
+app.get('/profile', (req, res) => {
+    res.render('profile.hbs', {
+        pageTitle: 'profile page',
+        welcomeMessage: 'hiii every one'
     });
 });
 
